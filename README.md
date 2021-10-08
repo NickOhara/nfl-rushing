@@ -11,7 +11,7 @@ This was my first time building a project using React.js so there were a few hic
 
 Things I would do differently:
 * Use a NoSQL database like mongo. The json file provided has some tricky data inconsistancies like mixing strings and numbers which makes using a relational db a chore. As soon as I started writing custom converters to sanitize the data I figured I was going to run into challenges. Luckily they weren't too bad for this project but it's something that could have been avoided.
-* Actually leverage popular react components. But that would have likely defeated the purpose to just simply use [react-table](https://react-table.tanstack.com/). I tried to avoid any prebuilt components and do everything myself. With this being my first time building a react app it's probably pretty obvious. I believe I avoided most common anti-patterns but it is a bit jarring moving from .NET MVC which is what I've been working in predominately. I really enjoyed working with react though and if anything this was a good learning experience.
+* Actually leverage popular react components. But that would have likely defeated the purpose to just simply use [react-table](https://react-table.tanstack.com/). I tried to avoid any prebuilt components and do everything myself. With this being my first time building a react app it's probably pretty obvious. I believe I avoided most common anti-patterns but it is a bit jarring moving from .NET MVC which is what I've been working with. I really enjoyed working with react though and if anything this was a good learning experience.
 * Use typescript. No idea why I didn't do this. I basically just realised a bit too late.
 
 ## Setup
