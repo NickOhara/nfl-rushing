@@ -15,12 +15,14 @@ namespace nfl_rushing
 {
     public class Startup
     {
-        private readonly string rushing = "rushing.json";
+        private readonly string BIG_RUSH = "rushing_big.json";
+        private readonly string LITTLE_RUSH = "rushing.json";
         private readonly string dbName = "NFLRushing.db";
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var jsonFile = Configuration.GetValue<int>("s") == 1 ? BIG_RUSH : LITTLE_RUSH;
             if (File.Exists(dbName))
             {
                 File.Delete(dbName);
@@ -33,7 +35,7 @@ namespace nfl_rushing
                     var serializeOptions = new JsonSerializerOptions();
                     serializeOptions.Converters.Add(new StringConverter());
                     serializeOptions.Converters.Add(new NumberConverter());
-                    var playerStats = JsonSerializer.Deserialize<List<PlayerStats>>(File.ReadAllText(rushing), serializeOptions);
+                    var playerStats = JsonSerializer.Deserialize<List<PlayerStats>>(File.ReadAllText(jsonFile), serializeOptions);
 
                     client.PlayerStats.AddRange(playerStats);
                     client.SaveChanges();
