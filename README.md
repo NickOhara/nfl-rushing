@@ -1,5 +1,5 @@
 # nfl-rushing
-## Info
+## Background
 This is my solution to  ["the Rush"](https://github.com/tsicareers/nfl-rushing) interview challenge. 
 
 Web app is built using:
