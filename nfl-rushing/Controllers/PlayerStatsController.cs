@@ -26,8 +26,7 @@ namespace nfl_rushing.Controllers
             var total = players.Count();
 
             players = players.AddSearch(search);
-            players = players.AddSort(sortBy);
-            
+            players = players.AddSort(sortBy);            
 
             return Tuple.Create(players.Skip(pageSize * (page -1)).Take(pageSize).ToList(), players.Count(), total);
         }

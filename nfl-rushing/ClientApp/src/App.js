@@ -52,7 +52,7 @@ export default class App extends Component {
         const { sortBy } = this.state;
         var sortColumn = sortBy.split('_')[0];
         var sortOrder = sortBy.split('_')[1];
-        var newOrder = "desc";
+        var newOrder = "desc"; //default
         //same column flip order
         if (sortColumn === column.header.toLowerCase()) {
             if (sortOrder === "desc") {
@@ -77,11 +77,6 @@ export default class App extends Component {
         });
     }
 
-    async fetchCSV() {
-        const { sortBy, search } = this.state;
-        await fetch(`file?sortBy=${sortBy}&search=${search}`);
-    }
-
     render() {
         const { data, sortBy, search, totalRecords, filteredRecords, pageSize, pagesToDisplay } = this.state;
         return (        
@@ -91,7 +86,7 @@ export default class App extends Component {
                     onSearchChanged={this.onSearchChanged} />
                 <Table
                     headers={[
-                        { header: "Player", isSortable: true },
+                        { header: "Player", isSortable: true, filterable: true },
                         { header: "Team", isSortable: true },
                         { header: "Pos", isSortable: true },
                         { header: "Att", isSortable: true },

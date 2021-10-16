@@ -18,7 +18,7 @@ export class Table extends Component {
     renderTable = (data) => {
         return (
             <div>
-                <table className='table table-striped' aria-labelledby="tabelLabel">
+                <table className='table table-striped'>
                     <thead>
                         <tr>
                             {this.props.headers.map((column, index) =>
