@@ -26,7 +26,13 @@ docker run -d -p 5000:80 nfl-rushing
 > add --s=0 for default json file or --s=1 for large file.
 
 Or alternatively grab the image directly from my [docker hub](https://hub.docker.com/r/trigs01/work/tags)
+```
+docker pull trigs01/work:nfl-rushing
+docker run -d -p 5000:80 trigs01/work:nfl-rushing
+```
+> add --s=0 for default json file or --s=1 for large file.
 
+The site should be accesible at localhost:5000
 ### Method 2 - Dotnet
 >Pre-requisites: Install .NET Core 3.1
 Navigate to the project directory and run
